@@ -4,15 +4,19 @@ const englishHelloPrefix = "Hello, "
 const chineseHelloPrefix = "你好， "
 const spanishHelloPrefix = "Hola, "
 
+const spanish = "Spanish"
+const chinese = "Chinese"
+
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
-	if language == "Chinese" {
+
+	if language == chinese {
 		return chineseHelloPrefix + name
 	}
 
-	if language == "Spanish" {
+	if language == spanish {
 		return spanishHelloPrefix + name
 	}
 
