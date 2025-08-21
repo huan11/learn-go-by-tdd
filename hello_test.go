@@ -15,11 +15,17 @@ func TestHello(t *testing.T) {
 		got := Hello("", "Chinese")
 		assertCorrectMessage(t, want, got)
 	})
+
+	t.Run("should use chinese word for Hello", func(t *testing.T) {
+		want := "Hola, World"
+		got := Hello("", "Spanish")
+		assertCorrectMessage(t, want, got)
+	})
 }
 
 func assertCorrectMessage(t testing.TB, want string, got string) {
 	t.Helper()
 	if want != got {
-		t.Errorf("got %q want %q", got, want)
+		t.Errorf("want %q got %q", want, got)
 	}
 }
