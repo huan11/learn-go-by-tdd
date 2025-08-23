@@ -31,10 +31,10 @@ open the browser (http://localhost:8080)
 
 open link http://localhost:8080
 
-![image-20250821203854080](./img/image-20250821203854080.png)
+![image-20250821203854080](img/image-20250821203854080.png)
 
 
 
 search
 
-![image-20250821203941534](./img/image-20250821203941534.png)
+![image-20250821203941534](img/image-20250821203941534.png)
