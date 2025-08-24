@@ -14,9 +14,21 @@
 
    only one param :capacity
 
+3. Slices can be sliced!
+
+   ```
+   tails := numbers[1:]
+   ```
+
+   
+
 ## Knowledge
 
+1. slice
 
+   The syntax is `slice[low:high]`.
+
+    If you omit the value on one of the sides of the `:` it captures everything to that side of it. 
 
 ## Command
 
