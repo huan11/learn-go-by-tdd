@@ -43,7 +43,30 @@
    > coverage: 100.0% of statements
    > ok      github.com/huan11/learn-go-by-tdd/datastructure/slice   0.381s
 
-2. 
+2. coverage report
+
+   ```
+   go test -coverprofile=coverage.out && go tool cover -func=coverage.out
+   ```
+
+   >  slice git:(main) ✗  go test -coverprofile=coverage.out && go tool cover -func=coverage.out
+   >
+   >PASS
+   >coverage: 94.1% of statements
+   >ok      github.com/huan11/learn-go-by-tdd/datastructure/slice   0.440s
+   >github.com/huan11/learn-go-by-tdd/datastructure/slice/slice.go:3:       Sum             100.0%
+   >github.com/huan11/learn-go-by-tdd/datastructure/slice/slice.go:11:      SumAll          100.0%
+   >github.com/huan11/learn-go-by-tdd/datastructure/slice/slice.go:19:      SumAllTails     100.0%
+   >github.com/huan11/learn-go-by-tdd/datastructure/slice/slice.go:28:      SumAll2         75.0%
+   >total:                                                                  (statements)    94.1%
+
+   ```
+   go test -cover -coverprofile=c.out && go tool cover -html=c.out
+   ```
+
+   ![image-20250824112334349](./img/image-20250824112334349.png)
+
+   
 
 ## TDD
 
@@ -56,3 +79,6 @@
    Having too many tests can turn in to a real problem and it just adds more overhead in maintenance. 
 
    **Every test has a cost**.
+
+
+
