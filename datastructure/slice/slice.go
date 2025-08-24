@@ -24,3 +24,12 @@ func SumAllTails(numbersToSum ...[]int) []int {
 	}
 	return sums
 }
+
+func SumAll2(numbersToSum ...[]int) []int {
+	sums := make([]int, 2)
+
+	for i, numbers := range numbersToSum {
+		sums[i] = Sum(numbers)
+	}
+	return sums
+}

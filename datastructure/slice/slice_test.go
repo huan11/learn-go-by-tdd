@@ -30,10 +30,21 @@ func TestSumAll(t *testing.T) {
 	})
 }
 func TestSumAllTails(t *testing.T) {
-	want := []int{4, 6}
-	got := SumAllTails([]int{1, 2, 2}, []int{2, 3, 3})
+	t.Run("Sum multiple slice ", func(t *testing.T) {
+		want := []int{4, 6}
+		got := SumAllTails([]int{1, 2, 2}, []int{2, 3, 3})
 
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("want %v got %v", want, got)
-	}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want %v got %v", want, got)
+		}
+	})
+
+	t.Run("Should throw exception if using sums[i] to change the slice ", func(t *testing.T) {
+		want := []int{5, 8}
+		got := SumAll2([]int{1, 2, 2}, []int{2, 3, 3}, []int{2})
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want %v got %v", want, got)
+		}
+	})
 }
