@@ -26,17 +26,6 @@ func TestSumAll(t *testing.T) {
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("want %v got %v", want, got)
 		}
-
-	})
-}
-func TestSumAllTails(t *testing.T) {
-	t.Run("Sum multiple slice ", func(t *testing.T) {
-		want := []int{4, 6}
-		got := SumAllTails([]int{1, 2, 2}, []int{2, 3, 3})
-
-		if !reflect.DeepEqual(got, want) {
-			t.Errorf("want %v got %v", want, got)
-		}
 	})
 
 	t.Run("Should panic when using fixed-size slice for Sum2", func(t *testing.T) {
@@ -48,5 +37,15 @@ func TestSumAllTails(t *testing.T) {
 
 		// SumAll2 使用固定大小为2的slice，但传入3个参数会导致越界
 		SumAll2([]int{1, 2, 2}, []int{2, 3, 3}, []int{2})
+	})
+}
+func TestSumAllTails(t *testing.T) {
+	t.Run("Sum multiple slice ", func(t *testing.T) {
+		want := []int{4, 6}
+		got := SumAllTails([]int{1, 2, 2}, []int{2, 3, 3})
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want %v got %v", want, got)
+		}
 	})
 }
