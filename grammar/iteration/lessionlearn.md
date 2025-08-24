@@ -61,3 +61,69 @@ explain:
 
 1. Only the body of the loop is timed; 
 2. it automatically excludes setup and cleanup code from benchmark timing.
+
+
+
+
+
+## improve performance by using strings.Builder
+
+1. strings.Builder
+2. WriteString
+
+```
+package iteration
+
+import "strings"
+
+func Repeat(s string) string {
+	var repeated strings.Builder
+	for i := 0; i < 3; i++ {
+		repeated.WriteString(s)
+	}
+	return repeated.String()
+}
+
+```
+
+
+
+
+
+command
+
+```
+go test -bench=. -benchmem
+```
+
+
+
+
+
+compare performance 
+
+Before(using string):
+
+> ➜  iteration git:(main) ✗ go test -bench=. -benchmem
+> goos: darwin
+> goarch: arm64
+> pkg: github.com/huan11/learn-go-by-tdd/grammar/iteration
+> cpu: Apple M4 Pro
+> BenchmarkRepeat-12      36472072                32.67 ns/op           16 B/op          2 allocs/op
+> PASS
+> ok      github.com/huan11/learn-go-by-tdd/grammar/iteration     1.497s
+>
+> 
+
+After (using strings.Builder)
+
+> ➜  iteration git:(main) ✗ go test -bench=. -benchmem
+> goos: darwin
+> goarch: arm64
+> pkg: github.com/huan11/learn-go-by-tdd/grammar/iteration
+> cpu: Apple M4 Pro
+> BenchmarkRepeat-12      83553204                14.06 ns/op            8 B/op          1 allocs/op
+> PASS
+> ok      github.com/huan11/learn-go-by-tdd/grammar/iteration     1.374s
+> ➜  iteration git:(main) ✗ 
+
