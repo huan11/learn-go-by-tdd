@@ -1,6 +1,9 @@
 package slice
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Run("sum the collection of any numbers", func(t *testing.T) {
@@ -12,5 +15,17 @@ func TestSum(t *testing.T) {
 		if got != want {
 			t.Errorf("want %d, got %d, %v", want, got, numbers)
 		}
+	})
+}
+
+func TestSumAll(t *testing.T) {
+	t.Run("Sum multiple slice ", func(t *testing.T) {
+		want := []int{5, 5}
+		got := SumAll([]int{2, 3}, []int{2, 3})
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want %v got %v", want, got)
+		}
+
 	})
 }

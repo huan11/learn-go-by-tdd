@@ -1,12 +1,18 @@
 ## Usage
 
-1. initialize slice : 
+1. initialize slice (way1): 
 
    ```
    numbers := []int{1, 2, 2}
    ```
 
-   
+2. initialize slice (way2): use make
+
+   ```
+   sums := make([]int, lengthOfNumbers)
+   ```
+
+   only one param :capacity
 
 ## Knowledge
 
